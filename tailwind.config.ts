@@ -47,6 +47,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        nta: {
+          blue: "hsl(var(--nta-blue))",
+          "blue-dark": "hsl(var(--nta-blue-dark))",
+          "blue-light": "hsl(var(--nta-blue-light))",
+        },
+        success: "hsl(var(--success))",
+        warning: "hsl(var(--warning))",
+        question: {
+          answered: "hsl(var(--question-answered))",
+          marked: "hsl(var(--question-marked))",
+          "not-answered": "hsl(var(--question-not-answered))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
