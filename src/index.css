@@ -52,10 +52,18 @@ All colors MUST be HSL.
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--nta-blue-dark)));
     --gradient-header: linear-gradient(90deg, hsl(var(--nta-blue)), hsl(var(--nta-blue-dark)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--card)/0.8));
+    --gradient-hover: linear-gradient(145deg, hsl(var(--nta-blue-light)), hsl(var(--accent)));
     
     /* Shadows */
     --shadow-card: 0 4px 6px -1px hsl(var(--primary) / 0.1);
+    --shadow-hover: 0 8px 25px -5px hsl(var(--nta-blue) / 0.3);
     --shadow-exam: 0 10px 25px -3px hsl(var(--primary) / 0.1);
+    --shadow-elegant: 0 20px 40px -12px hsl(var(--primary) / 0.25);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 

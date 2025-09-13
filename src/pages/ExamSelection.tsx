@@ -87,11 +87,11 @@ const ExamSelection = () => {
             </div>
 
             {/* Grand Test Card */}
-            <Card className="p-6 border-2 hover:border-nta-blue transition-all duration-300 hover:shadow-lg cursor-pointer group">
+            <Card className="p-6 border-2 hover:border-nta-blue transition-all duration-500 hover:shadow-xl cursor-pointer group transform hover:-translate-y-1 hover:bg-gradient-to-br hover:from-card hover:to-nta-blue-light/10 animate-slide-up">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-nta-blue-light rounded-lg flex items-center justify-center">
-                    <BookOpen className="h-6 w-6 text-nta-blue" />
+                  <div className="w-12 h-12 bg-nta-blue-light rounded-lg flex items-center justify-center group-hover:bg-nta-blue group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
+                    <BookOpen className="h-6 w-6 text-nta-blue group-hover:text-primary-foreground transition-all duration-300" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-foreground group-hover:text-nta-blue transition-colors">
@@ -120,7 +120,8 @@ const ExamSelection = () => {
                 </div>
                 
                 <Button 
-                  className="w-full bg-nta-blue hover:bg-nta-blue-dark"
+                  variant="premium"
+                  className="w-full group-hover:animate-glow"
                   onClick={() => navigate(`/exam/${examId}/grand-test`)}
                 >
                   Start Grand Test
@@ -129,11 +130,11 @@ const ExamSelection = () => {
             </Card>
 
             {/* Part Test Card */}
-            <Card className="p-6 border-2 hover:border-nta-blue transition-all duration-300 hover:shadow-lg cursor-pointer group">
+            <Card className="p-6 border-2 hover:border-success transition-all duration-500 hover:shadow-xl cursor-pointer group transform hover:-translate-y-1 hover:bg-gradient-to-br hover:from-card hover:to-success/5 animate-slide-up" style={{animationDelay: '150ms'}}>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
-                    <Target className="h-6 w-6 text-success" />
+                  <div className="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center group-hover:bg-success group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
+                    <Target className="h-6 w-6 text-success group-hover:text-white transition-all duration-300" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-foreground group-hover:text-nta-blue transition-colors">
@@ -159,7 +160,7 @@ const ExamSelection = () => {
                 
                 <Button 
                   variant="outline"
-                  className="w-full border-nta-blue text-nta-blue hover:bg-nta-blue hover:text-primary-foreground"
+                  className="w-full border-success text-success hover:bg-success hover:text-white group-hover:shadow-lg transition-all duration-300"
                   onClick={() => navigate(`/exam/${examId}/part-test`)}
                 >
                   Start Part Test
@@ -182,15 +183,15 @@ const ExamSelection = () => {
               
               <div className="divide-y divide-border">
                 {examHistory.map((record, index) => (
-                  <div key={index} className="px-6 py-4 hover:bg-secondary/50 transition-colors">
+                  <div key={index} className="px-6 py-4 hover:bg-gradient-to-r hover:from-secondary/50 hover:to-nta-blue-light/20 transition-all duration-300 cursor-pointer group animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
                     <div className="flex justify-between items-start">
                       <div className="space-y-1">
-                        <p className="font-medium text-foreground">{record.type}</p>
-                        <p className="text-sm text-muted-foreground">{record.date}</p>
+                        <p className="font-medium text-foreground group-hover:text-nta-blue transition-all duration-300">{record.type}</p>
+                        <p className="text-sm text-muted-foreground group-hover:text-foreground transition-all duration-300">{record.date}</p>
                       </div>
                       <div className="text-right space-y-1">
-                        <p className="font-semibold text-success">{record.score}</p>
-                        <p className="text-sm text-muted-foreground">{record.percentage}</p>
+                        <p className="font-semibold text-success group-hover:scale-110 transition-all duration-300">{record.score}</p>
+                        <p className="text-sm text-muted-foreground group-hover:text-foreground transition-all duration-300">{record.percentage}</p>
                       </div>
                     </div>
                   </div>

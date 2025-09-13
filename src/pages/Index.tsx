@@ -74,11 +74,11 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
-            {exams.map((exam) => (
-              <Card key={exam.id} className="p-6 hover:shadow-lg transition-all duration-300 border-2 hover:border-nta-blue cursor-pointer group">
+            {exams.map((exam, index) => (
+              <Card key={exam.id} className="p-6 hover:shadow-xl transition-all duration-500 border-2 hover:border-nta-blue cursor-pointer group transform hover:-translate-y-2 hover:bg-gradient-to-br hover:from-card hover:to-nta-blue-light/10 animate-fade-in" style={{animationDelay: `${index * 150}ms`}}>
                 <div className="text-center space-y-4">
-                  <div className="text-4xl mb-3">{exam.icon}</div>
-                  <h3 className="text-xl font-bold text-foreground group-hover:text-nta-blue transition-colors">
+                  <div className="text-4xl mb-3 group-hover:animate-float transition-all duration-300 group-hover:scale-110">{exam.icon}</div>
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-nta-blue transition-all duration-300 group-hover:scale-105">
                     {exam.name}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -107,7 +107,8 @@ const Index = () => {
                   </div>
                   
                   <Button 
-                    className="w-full bg-nta-blue hover:bg-nta-blue-dark"
+                    variant="premium"
+                    className="w-full group-hover:animate-glow"
                     onClick={() => navigate(`/exam/${exam.id}`)}
                   >
                     Start Exam
@@ -138,11 +139,11 @@ const Index = () => {
                 </thead>
                 <tbody className="divide-y divide-border">
                   {recentHistory.map((record, index) => (
-                    <tr key={index} className="hover:bg-secondary/50 transition-colors">
-                      <td className="px-6 py-4 text-sm text-foreground">{record.date}</td>
-                      <td className="px-6 py-4 text-sm font-medium text-foreground">{record.exam}</td>
-                      <td className="px-6 py-4 text-sm text-muted-foreground">{record.type}</td>
-                      <td className="px-6 py-4 text-sm font-semibold text-success">{record.score}</td>
+                    <tr key={index} className="hover:bg-gradient-to-r hover:from-secondary/50 hover:to-nta-blue-light/20 transition-all duration-300 cursor-pointer group">
+                      <td className="px-6 py-4 text-sm text-foreground group-hover:font-medium transition-all duration-300">{record.date}</td>
+                      <td className="px-6 py-4 text-sm font-medium text-foreground group-hover:text-nta-blue transition-all duration-300">{record.exam}</td>
+                      <td className="px-6 py-4 text-sm text-muted-foreground group-hover:text-foreground transition-all duration-300">{record.type}</td>
+                      <td className="px-6 py-4 text-sm font-semibold text-success group-hover:scale-110 transition-all duration-300">{record.score}</td>
                     </tr>
                   ))}
                 </tbody>
